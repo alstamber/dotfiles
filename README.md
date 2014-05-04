@@ -2,11 +2,11 @@
 
 ### Clone dotfiles
 ~~~bash
-xcode-select --install
+xcode-select --install  # OS X
 git clone git@github.com:alstamber/dotfiles.git
 ~~~
 
-### Install Apps (via homebrew)
+### Install Apps (via homebrew, only OS X)
 ~~~bash
 sh dotfiles/brew-install.sh
 ~~~
