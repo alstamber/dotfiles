@@ -75,7 +75,6 @@ alias ll="ls -al"
 # OSX
 case "${OSTYPE}" in
 darwin*)
-    [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
     export PATH=$PATH:/opt/local/bin:/opt/local/sbin/
     export PATH=$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/
     export TEXINPUTS=.//:
