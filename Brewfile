@@ -13,7 +13,7 @@ install ruby-build
 
 ## Utilities
 tap sanemat/font
-install ricty
+install ricty --powerline --vim-powerline
 install gist
 install jq
 install nkf
