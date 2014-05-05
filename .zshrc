@@ -80,5 +80,6 @@ darwin*)
     export TEXINPUTS=.//:
     export TEXMFLOCAL=/usr/local/texlive/texmf-local
     export PATH=$PATH:/usr/texbin
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
     ;;
 esac

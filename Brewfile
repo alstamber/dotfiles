@@ -4,6 +4,8 @@ upgrade
 
 ## VCS
 install git
+install git-flow
+install tig
 
 ## Programming language version manager
 install rbenv
@@ -14,6 +16,7 @@ tap sanemat/font
 install ricty
 install gist
 install jq
+install nkf
 install rmtrash
 install tree
 install wget
@@ -32,6 +35,7 @@ cask install appcleaner
 cask install caffeine
 cask install dropbox
 cask install evernote
+cask install github
 # cask install google-chrome     # does NOT work with 1password
 cask install google-drive
 cask install google-japanese-ime
@@ -39,9 +43,11 @@ cask install iterm2
 cask install java
 cask install libreoffice
 cask install limechat
+cask install pandoc
 cask install skype
 cask install sourcetree
 cask install sublime-text
+cask install tinkertool
 cask install vlc
 
 ## Alfred link
