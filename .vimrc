@@ -25,10 +25,11 @@ else
     NeoBundle 'ruby.vim'
     NeoBundle 'banyan/recognize_charcode.vim'
 
-    NeoBundle 'itchyny/lightline.vim'
     NeoBundle 'Shougo/neocomplete'
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets'
+
+    NeoBundle 'https://github.com/Lokaltog/powerline.git'
 
 
     filetype plugin indent on
@@ -63,7 +64,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 " Appearance Configuration
 "
 set showmatch
-set laststatus=2
 set number
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<
@@ -82,6 +82,8 @@ set cursorline
 let g:molokai_original = 1
 let g:rehash256 = 1
 colorscheme molokai
+
+set t_ut=
 
 if &term =~ "xterm-256color" || "screen-256color"
     set t_Co=256
@@ -252,3 +254,12 @@ smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : 
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+
+"
+" Powerline Configuration
+"
+set laststatus=2
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+set noshowmode

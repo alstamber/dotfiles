@@ -1,5 +1,5 @@
 ## ENV
-export TERM=dtterm
+export TERM=xterm-256color
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
@@ -74,6 +74,9 @@ alias ll="ls -al"
 
 # vim
 alias vi="vim"
+
+# tmux
+alias ta="tmux attach"
 
 
 # OSX

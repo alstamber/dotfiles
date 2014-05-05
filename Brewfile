@@ -13,11 +13,12 @@ install ruby-build
 
 ## Utilities
 tap sanemat/font
-install ricty --powerline --vim-powerline
+install ricty --powerline
 install gist
 install jq
 install nkf
 install rmtrash
+install tmux
 install tree
 install vim --with-lua
 install wget
