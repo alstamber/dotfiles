@@ -17,7 +17,7 @@ else
         execute 'set runtimepath+='.expand(s:neobundle_dir)
     endif
     call neobundle#rc(expand($BUNDLE))
-    NeoBundleFetch 'Shougo/neobundle.vim'
+    NeoBundle 'Shougo/neobundle.vim'
 
 
     NeoBundle 'tomasr/molokai'
@@ -25,6 +25,7 @@ else
     NeoBundle 'ruby.vim'
     NeoBundle 'banyan/recognize_charcode.vim'
 
+    NeoBundle 'itchyny/lightline.vim'
 
     filetype plugin indent on
 endif
@@ -58,6 +59,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 " Appearance Configuration
 "
 set showmatch
+set laststatus=2
 set number
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<
