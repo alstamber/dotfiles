@@ -78,6 +78,11 @@ alias vi="vim"
 # tmux
 alias ta="tmux attach"
 
+# git
+alias gs="git status"
+alias ga="git add"
+alias gm="git commit -m"
+
 
 # OSX
 case "${OSTYPE}" in
