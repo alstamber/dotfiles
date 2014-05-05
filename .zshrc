@@ -72,6 +72,9 @@ alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -al"
 
+# vim
+alias vi="vim"
+
 
 # OSX
 case "${OSTYPE}" in
