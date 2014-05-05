@@ -51,7 +51,6 @@ cask install limechat
 cask install pandoc
 cask install skype
 cask install sourcetree
-cask install sublime-text
 cask install tinkertool
 cask install vlc
 
