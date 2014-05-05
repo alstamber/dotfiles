@@ -32,6 +32,7 @@ cask install android-studio
 cask install adobe-reader
 cask install alfred
 cask install appcleaner
+cask install bettertouchtool
 cask install caffeine
 cask install dropbox
 cask install evernote
@@ -39,6 +40,7 @@ cask install github
 # cask install google-chrome     # does NOT work with 1password
 cask install google-drive
 cask install google-japanese-ime
+cask install hyperswitch
 cask install iterm2
 cask install java
 cask install libreoffice
