@@ -34,6 +34,7 @@ cask install alfred
 cask install appcleaner
 cask install bettertouchtool
 cask install caffeine
+cask install cinch
 cask install dropbox
 cask install evernote
 cask install github
