@@ -1,8 +1,9 @@
 ## ENV
 export TERM=dtterm
 export EDITOR=vim
+export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
-export PATH=$PATH:/sbin:/usr/local/bin
+export PATH=$PATH:/sbin
 export PATH=$PATH:$HOME/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 

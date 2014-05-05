@@ -19,6 +19,7 @@ install jq
 install nkf
 install rmtrash
 install tree
+install vim --with-lua
 install wget
 
 ## Shell
