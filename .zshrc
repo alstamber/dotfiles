@@ -102,7 +102,7 @@ darwin*)
         git config --global http.proxy ${http_proxy}
         git config --global url."https://".insteadOf git://
         git config --global core.gitproxy git-proxy
-        alias ssh="ssh -F ~/.ssh/proxy_config"
+        alias git="GIT_SSH=git-ssh git"
     else
         unset http_proxy
         unset https_proxy
@@ -111,7 +111,9 @@ darwin*)
         git config --global --unset https.proxy
         git config --global --unset url."https://".insteadOf
         git config --global --unset core.gitproxy
-        alias ssh="ssh -F ~/.ssh/config"
+        if test "` alias | grep ^git`" != ""; then
+            unalias git
+        fi
     fi
     ;;
 esac
