@@ -93,31 +93,5 @@ darwin*)
     export TEXMFLOCAL=/usr/local/texlive/texmf-local
     export PATH=$PATH:/usr/texbin
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-    AIRPORT="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
-    if test "` ${AIRPORT} -I |grep \[^B\]SSID|awk '{print $2}'`" = "UECWireless"; then
-        export http_proxy=http://proxy.uec.ac.jp:8080/
-        export https_proxy=http://proxy.uec.ac.jp:8080/
-        export ALL_PROXY=http://proxy.uec.ac.jp:8080/
-        git config --global http.proxy ${http_proxy}
-        git config --global url."https://".insteadOf git://
-        git config --global core.gitproxy git-proxy
-        alias git="GIT_SSH=git-ssh git"
-        alias ssh="ssh -F .ssh/proxy_config"
-    else
-        unset http_proxy
-        unset https_proxy
-        unset ALL_PROXY
-        git config --global --unset http.proxy
-        git config --global --unset https.proxy
-        git config --global --unset url."https://".insteadOf
-        git config --global --unset core.gitproxy
-        if test "` alias | grep ^git`" != ""; then
-            unalias git
-        fi
-        if test "` alias | grep ^ssh`" != ""; then
-            unalias ssh
-        fi
-    fi
     ;;
 esac
