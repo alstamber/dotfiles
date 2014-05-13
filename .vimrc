@@ -111,7 +111,9 @@ syntax enable
 set noimdisable
 set iminsert=0 imsearch=0
 set noimcmdline
-inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+set notimeout
+set ttimeout
+set timeoutlen=100
 
 set expandtab
 autocmd BufWritePre * :%s/\s\+$//ge
