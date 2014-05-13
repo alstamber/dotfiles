@@ -1,4 +1,5 @@
 ## ENV
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export TERM=xterm-256color
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
