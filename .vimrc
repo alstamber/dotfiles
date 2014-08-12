@@ -79,10 +79,8 @@ set cursorline
 "
 " Color Configuration
 "
-let g:solarized_termtrans=1
 set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+colorscheme yuroyoro256
 
 if &term =~ "xterm-256color" || "screen-256color"
     set t_Co=256
