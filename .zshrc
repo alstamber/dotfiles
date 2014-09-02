@@ -7,6 +7,8 @@ export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:$HOME/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"
 
 
 ## LANG
@@ -88,8 +90,9 @@ alias gm="git commit -m"
 # OSX
 case "${OSTYPE}" in
 darwin*)
-    export PATH=$PATH:/opt/local/bin:/opt/local/sbin/
-    export PATH=$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/
+    export PATH=/usr/local/bin:$PATH
+    export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+    export PATH=$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources
     export TEXINPUTS=.//:
     export TEXMFLOCAL=/usr/local/texlive/texmf-local
     export PATH=$PATH:/usr/texbin
