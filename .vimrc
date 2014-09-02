@@ -112,8 +112,8 @@ set noimcmdline
 set notimeout
 set ttimeout
 set timeoutlen=100
-
 set expandtab
+
 autocmd BufWritePre * :%s/\s\+$//ge
 
 augroup MyXML
@@ -152,8 +152,8 @@ if has("autocmd")
   autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
   autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType python     setlocal sw=4 sts=4 ts=4 noet
   autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
