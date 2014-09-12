@@ -19,7 +19,6 @@ else
     call neobundle#rc(expand($BUNDLE))
     NeoBundle 'Shougo/neobundle.vim'
 
-
     NeoBundle 'altercation/vim-colors-solarized'
     NeoBundle 'yuroyoro/yuroyoro256.vim'
     NeoBundle 'ruby.vim'
@@ -29,10 +28,10 @@ else
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets'
 
-    NeoBundle 'https://github.com/Lokaltog/powerline.git'
-
+    NeoBundle 'Lokaltog/powerline'
 
     filetype plugin indent on
+
 endif
 
 "

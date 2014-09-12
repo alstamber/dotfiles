@@ -1,11 +1,12 @@
 ## ENV
+export PATH=/usr/local/bin:/usr/bin:/bin
+export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$PATH:/usr/sbin:/sbin
+export PATH=$PATH:$HOME/bin
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export TERM=xterm-256color
 export EDITOR=vim
-export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
-export PATH=$PATH:/sbin
-export PATH=$PATH:$HOME/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
@@ -85,13 +86,13 @@ alias ta="tmux attach"
 alias gs="git status"
 alias ga="git add"
 alias gm="git commit -m"
+alias gf="git find"
+alias gl="git log"
 
 
 # OSX
 case "${OSTYPE}" in
 darwin*)
-    export PATH=/usr/local/bin:$PATH
-    export PATH=$PATH:/opt/local/bin:/opt/local/sbin
     export PATH=$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources
     export TEXINPUTS=.//:
     export TEXMFLOCAL=/usr/local/texlive/texmf-local
