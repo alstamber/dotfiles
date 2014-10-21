@@ -9,7 +9,7 @@ export TERM=xterm-256color
 export EDITOR=vim
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 
 ## LANG
