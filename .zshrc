@@ -1,7 +1,8 @@
 ## ENV
 export PATH=/usr/local/bin:/usr/bin:/bin
+export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$PATH:/usr/sbin:/sbin
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export PATH=$PATH:$HOME/bin
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -51,6 +52,8 @@ setopt noautoremoveslash
 setopt nolistbeep
 setopt autopushd
 
+bindkey -e
+
 
 ## Command history configuration
 HISTFILE=~/.zsh_history
@@ -88,6 +91,7 @@ alias ga="git add"
 alias gm="git commit -m"
 alias gf="git find"
 alias gl="git log"
+alias gd="git diff"
 
 
 # OSX
@@ -98,5 +102,6 @@ darwin*)
     export TEXMFLOCAL=/usr/local/texlive/texmf-local
     export PATH=$PATH:/usr/texbin
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+    alias vl="/usr/local/share/vim/vim74/macros/less.sh"
     ;;
 esac
