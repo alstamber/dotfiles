@@ -11,6 +11,15 @@ export EDITOR=vim
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 export PYENV_ROOT="$HOME/.pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source $(brew --prefix nvm)/nvm.sh
+
+if [ -d ${HOME}/node_modules/.bin ]; then
+    export PATH=${PATH}:${HOME}/node_modules/.bin
+fi
+
+if [ -d ${HOME}/.composer/vendor/bin ]; then
+    export PATH=${PATH}:${HOME}/.composer/vendor/bin
+fi
 
 
 ## LANG
