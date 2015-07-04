@@ -1,6 +1,7 @@
 ## ENV
 export PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=$HOME/sdk/platform-tools:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export PATH=$PATH:$HOME/bin
