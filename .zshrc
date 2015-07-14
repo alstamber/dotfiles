@@ -46,7 +46,6 @@ setopt magic_equal_subst
 setopt brace_ccl
 setopt auto_menu
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-zstyle ':completion:*' list-colors di=34 fi=0
 setopt multios
 setopt noautoremoveslash
 setopt nolistbeep
@@ -103,5 +102,10 @@ darwin*)
     export PATH=$PATH:/usr/texbin
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
     alias vl="/usr/local/share/vim/vim74/macros/less.sh"
+    eval $(gdircolors $HOME/dotfiles/dircolors.256dark)
+    alias ls="gls --color=auto"
+    if [ -n "$LS_COLORS" ]; then
+        zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+    fi
     ;;
 esac
