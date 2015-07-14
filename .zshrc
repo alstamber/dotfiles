@@ -1,6 +1,7 @@
 ## ENV
 export PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=$HOME/sdk/platform-tools:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export PATH=$PATH:$HOME/bin
@@ -11,6 +12,15 @@ export EDITOR=vim
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 export PYENV_ROOT="$HOME/.pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source $(brew --prefix nvm)/nvm.sh
+
+if [ -d ${HOME}/node_modules/.bin ]; then
+    export PATH=${PATH}:${HOME}/node_modules/.bin
+fi
+
+if [ -d ${HOME}/.composer/vendor/bin ]; then
+    export PATH=${PATH}:${HOME}/.composer/vendor/bin
+fi
 
 
 ## LANG
