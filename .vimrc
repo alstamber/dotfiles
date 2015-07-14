@@ -79,7 +79,7 @@ set cursorline
 " Color Configuration
 "
 set background=dark
-colorscheme yuroyoro256
+colorscheme solarized
 
 if &term =~ "xterm-256color" || "screen-256color"
     set t_Co=256
