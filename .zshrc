@@ -2,7 +2,6 @@
 export PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=$HOME/sdk/platform-tools:$PATH
-export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export PATH=$PATH:$HOME/bin
 
@@ -10,8 +9,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export TERM=xterm-256color
 export EDITOR=vim
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="/usr/local/var/pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 if [ -d ${HOME}/node_modules/.bin ]; then
     export PATH=${PATH}:${HOME}/node_modules/.bin
@@ -20,6 +20,8 @@ fi
 if [ -d ${HOME}/.composer/vendor/bin ]; then
     export PATH=${PATH}:${HOME}/.composer/vendor/bin
 fi
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 
 ## LANG
@@ -42,8 +44,42 @@ CYAN="%{${fg[cyan]}%}"
 WHITE="%{${fg[white]}%}"
 END="$"
 
+## git
+function git_prompt_stash_count {
+    local COUNT=$(git stash list 2> /dev/null | wc -l | tr -d ' ')
+    if [ "$COUNT" -gt 0 ]; then
+        echo "@$COUNT"
+    fi
+}
+
+function rprompt-git-current-branch {
+    local name st color
+
+    if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+        return
+    fi
+
+    name=$(basename "`git symbolic-ref --short HEAD 2> /dev/null`")
+    if [[ -z $name ]]; then
+        return
+    fi
+
+    st=`git status 2> /dev/null`
+    if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+        color=${fg[blue]}
+    elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+        color=${fg[yellow]}
+    elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+        color=${fg_bold[red]}
+    else
+        color=${fg[red]}
+    fi
+
+  echo "%{$color%}$name`git_prompt_stash_count`%{$reset_color%}"
+}
+
 PROMPT='%{$fg_bold[blue]%}${USER}@%m ${RESET}${WHITE}${END} ${RESET}'
-RPROMPT='${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)% ${WHITE}]${RESET}'
+RPROMPT='${RESET}${WHITE}[`rprompt-git-current-branch` ${WHITE}%(5~,%-2~/.../%2~,%~)% ]${RESET}'
 
 
 ## Functions
