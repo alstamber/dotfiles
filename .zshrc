@@ -75,11 +75,11 @@ function rprompt-git-current-branch {
         color=${fg[red]}
     fi
 
-  echo "%{$color%}$name`git_prompt_stash_count`%{$reset_color%}"
+  echo "%{$color%}$name`git_prompt_stash_count`%{$reset_color%} "
 }
 
 PROMPT='%{$fg_bold[blue]%}${USER}@%m ${RESET}${WHITE}${END} ${RESET}'
-RPROMPT='${RESET}${WHITE}[`rprompt-git-current-branch` ${WHITE}%(5~,%-2~/.../%2~,%~)% ]${RESET}'
+RPROMPT='${RESET}${WHITE}[`rprompt-git-current-branch`${WHITE}%(5~,%-2~/.../%2~,%~)% ]${RESET}'
 
 
 ## Functions
@@ -97,6 +97,13 @@ setopt nolistbeep
 setopt autopushd
 
 bindkey -e
+
+# peco
+for f (~/.zsh/peco-scripts/*) source "${f}"
+
+# cdr
+autoload -Uz add-zsh-hock
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hock
 
 
 ## Command history configuration
@@ -136,6 +143,7 @@ alias gm="git commit -m"
 alias gf="git find"
 alias gl="git log"
 alias gd="git diff"
+alias pad="git padd"
 
 
 # OSX
