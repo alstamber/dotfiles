@@ -16,8 +16,9 @@ else
     if has('vim_starting')
         execute 'set runtimepath+='.expand(s:neobundle_dir)
     endif
-    call neobundle#rc(expand($BUNDLE))
-    NeoBundle 'Shougo/neobundle.vim'
+
+    call neobundle#begin(expand($BUNDLE))
+    NeoBundleFetch 'Shougo/neobundle.vim'
 
     NeoBundle 'altercation/vim-colors-solarized'
     NeoBundle 'yuroyoro/yuroyoro256.vim'
@@ -28,11 +29,18 @@ else
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets'
 
-    NeoBundle 'Lokaltog/powerline'
+    call neobundle#end()
 
     filetype plugin indent on
 
 endif
+
+"
+" Powerline
+"
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 "
 " Basic Configuration
