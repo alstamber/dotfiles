@@ -1,40 +1,21 @@
 "
-" NeoBundle
+" Vim-Plug
 "
-let $VIM = expand('~/.vim')
-let $BUNDLE = $VIM.'/bundle'
-let s:neobundle_dir = $BUNDLE.'/neobundle.vim'
-if !isdirectory(s:neobundle_dir)
-    if executable('git')
-        echo 'Initializing neobundle'
-        execute '!mkdir -p '.$BUNDLE
-            \.' && git clone https://github.com/Shougo/neobundle.vim '.$BUNDLE.'/neobundle.vim'
-    else
-        echo 'git not found! Sorry, this .vimrc cannot be completely used without git.'
-    endif
-else
-    if has('vim_starting')
-        execute 'set runtimepath+='.expand(s:neobundle_dir)
-    endif
-
-    call neobundle#begin(expand($BUNDLE))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-
-    NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'yuroyoro/yuroyoro256.vim'
-    NeoBundle 'ruby.vim'
-    NeoBundle 'banyan/recognize_charcode.vim'
-
-    NeoBundle 'Shougo/neocomplete'
-    NeoBundle 'Shougo/neosnippet'
-    NeoBundle 'Shougo/neosnippet-snippets'
-    NeoBundle 'posva/vim-vue'
-
-    call neobundle#end()
-
-    filetype plugin indent on
-
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'yuroyoro/yuroyoro256.vim'
+Plug 'banyan/recognize_charcode.vim'
+
+Plug 'Shougo/neocomplete'
+
+call plug#end()
 
 "
 " Basic Configuration
@@ -50,6 +31,7 @@ set ttymouse=xterm2
 set nobackup
 set nocompatible
 set noswapfile
+set noundofile
 set notitle
 set nowrap
 set scrolloff=5
@@ -64,6 +46,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 "
 " Appearance Configuration
 "
+set laststatus=2
 set showmatch
 set number
 set list
@@ -258,10 +241,3 @@ if has('conceal')
 endif
 
 
-"
-" Powerline Configuration
-"
-set laststatus=2
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'fancy'
-set noshowmode
