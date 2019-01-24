@@ -28,6 +28,7 @@ else
     NeoBundle 'Shougo/neocomplete'
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'Shougo/neosnippet-snippets'
+    NeoBundle 'posva/vim-vue'
 
     call neobundle#end()
 
@@ -80,7 +81,7 @@ set cursorline
 " Color Configuration
 "
 set background=dark
-colorscheme solarized
+colorscheme yuroyoro256
 
 if &term =~ "xterm-256color" || "screen-256color"
     set t_Co=256
@@ -166,6 +167,8 @@ if has("autocmd")
   autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType vue        syntax sync fromstart
+  autocmd FileType vue        setlocal sw=2 sts=2 ts=2 et
 endif
 
 

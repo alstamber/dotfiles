@@ -4,6 +4,10 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=$HOME/sdk/platform-tools:$PATH
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home/bin
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+export JAVA_HOME=/Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export TERM=xterm-256color
