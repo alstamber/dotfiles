@@ -24,5 +24,4 @@ chsh -s /bin/zsh
 ### Configure vim
 ~~~bash
 vim
-vim -c NeoBundleInstall!
 ~~~
